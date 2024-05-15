@@ -34,7 +34,7 @@ def join(path):
 
     print("Joining...")
     target = open(new_file_path, "wb")
-    files = [f.path for f in os.scandir(path)]
+    files = sorted([f.path for f in os.scandir(path) if not f.name == "meta"])
     for file in files:
         with open(file, "rb") as source:
             target.write(source.read())
