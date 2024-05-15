@@ -41,7 +41,6 @@ def split(path, max_chunk_size):
         exit(1)
 
     print("Starting...")
-    source = open(path, "rb")
     if not os.path.exists(new_folder):
         os.mkdir(new_folder)
 
@@ -51,8 +50,10 @@ def split(path, max_chunk_size):
         f.write(filename)
 
     # copying content
+    source = open(path, "rb")
     new_files = [f"chunk{i}" for i in range(chunk_count)]
     for i in range(chunk_count):
         with open(os.path.join(new_folder, new_files[i]), "wb") as target:
             target.write(source.read(chunk_sizes_precise[i]))
+    source.close()
     print("Done")

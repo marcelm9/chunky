@@ -38,4 +38,5 @@ def join(path):
     for file in files:
         with open(file, "rb") as source:
             target.write(source.read())
+    target.close()
     print("Done")
