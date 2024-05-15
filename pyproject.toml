@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "chunky"
+version = "1.0.0"
+description = ""
+authors = ["marcelm9 <marcel.menzel09@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "chunky", from = "main" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
